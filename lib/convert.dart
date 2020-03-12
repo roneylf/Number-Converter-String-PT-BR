@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-class ConvertNumber {
+class ConvertNumberToWords {
   static String convert(double num) {
     String mask = "000000000000";
     final df = new NumberFormat(mask);
