@@ -6,7 +6,7 @@ class ConvertNumber {
     final df = new NumberFormat(mask);
     String snumber = df.format(num);
 
-    int centenamil = int.parse(snumber.substring(5, 6));
+    int centenamil = int.parse(snumber.substring(6, 7));
     int dezenamil = int.parse(snumber.substring(7, 8));
     int mil = int.parse(snumber.substring(8, 9));
 
@@ -35,7 +35,7 @@ class ConvertNumber {
 
     String txtMilDezena = _converteDezena(dezenamil);
 
-    String txtMilCentena = _converteCentenas(centenamil+1);
+    String txtMilCentena = _converteCentenas(centenamil);
 
     String resultado = " ";
     List<String> conj = List<String>();
@@ -49,10 +49,11 @@ class ConvertNumber {
     int x = 0;
 
     conj.forEach((f) {
-      if (x > 0) {
+    
+      if (f.length > 1) {
+          if (x > 0) {
         resultado += " e ";
       }
-      if (f.length > 1) {
         resultado += f;
         x++;
       }
